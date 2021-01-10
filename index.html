@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
+    <title>Pitch Quiz</title>
+    <!-- CSS  -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="css/materialize.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <link
+      href="css/style.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> 
+  </head>
+  <body>
+  <stuff>
+    <nav class="blue-grey darken-1" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">MISO TOOLBOX</a> 
+      </div>
+    </nav>
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <br /><br />
+        <h1 class="header center blue-grey-text">
+
+        </h1>
+        <div class="row center">
+          <h5 class="header col s12 light">
+            <div id = correct class="correct"></div>
+            <div id= score class="score">Score: 0</div>
+            <div id= prevWord class="prevWord"></div>
+            
+          <div class="word">
+            <div id="pitch" class="wordField pitch"></div>
+            <div id="reading" class="wordField reading"></div>
+            <div id="word" class="wordField kanji"></div>
+          </div>
+          
+          
+
+          <div class= "buttons">
+            <a id = heiban class="btn blue darken-1 waves-effect" onclick="answer('h')">heiban</a>
+            <a id = kifuku class="kifuku btn purple darken-1 waves-effect" onclick="answer('k')">kifuku</a>
+            <a id = odaka class="odaka btn green darken-1 waves-effect" onclick="answer('o')">odaka</a>
+            <a id = nakadaka class="nakadaka btn orange darken-1 waves-effect" onclick="answer('n')">nakadaka</a>
+            <a id = atamadaka class="atamadaka btn red darken-1 waves-effect" onclick="answer('a')">atamadaka</a>
+          </div>
+
+          </h5>
+        </div>
+        <div class="row center">
+         
+        </div>
+        <br /><br />
+      </div>
+    </div>
+    <div class="container">
+      <div class="section">
+        <!--   Icon Section   -->
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center light-blue-text"></h2>
+              <h5 class="center">Pitch accent perception quiz</h5>
+              <p class="para">
+                Click between the syllables to insert downsteps in the correct places
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+    </div>
+  </stuff>
+  
+  <footer class="page-footer blue-grey">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <p class="grey-text text-lighten-4">
+            Making immersion tools to learn coding and stuff.
+          </p>
+        </div>
+        <div class="col l3 s12">
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Made by
+        <a class="blue-text text-lighten-3" href="https://github.com/SeasonedMiso"
+          >Miso</a
+        >
+      </div>
+    </div>
+  </footer>
+
+    <!--  Scripts-->
+    <scrip src="https://code.jquery.com/jquery-2.1.1.min.js"></scrip>
+    <script src="js/materialize.js"></scrip>
+    <script src="js/init.js"></script>
+    <script src="js\script.js"></script>  
+  </body>
+</html>

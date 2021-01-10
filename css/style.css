@@ -1,0 +1,58 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+.para {
+  text-align: center;
+}
+
+* {
+  font-family: "Raleway", sans-serif;
+}
+body {
+  background-color: transparent;
+}
+body::after {
+  background-image: url("../stuff/1538244205855.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+}
+.buttons {
+  width: 50%;
+  position: relative;
+  margin: auto;
+}
+.btn {
+  width: 200px;
+  font-weight: bold;
+  position: relative;
+  float: center;
+  margin: 10px;
+}
+.word {
+  padding: 20px;
+  margin: auto;
+}
+.kanji {
+  padding-top: 3px;
+  font-size: 30px;
+}
+.prevWord {
+  font-weight: bold;
+}
+.correct {
+  font-weight: 600;
+  font-size: 80px;
+  margin: 20px;
+}
