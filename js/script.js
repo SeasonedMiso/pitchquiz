@@ -3,7 +3,10 @@ let randomNumber;
 let lastRandomNumber;
 let score = 0;
 let wordNow = { word, reading, pitch };
-displayThing = document.getElementById("atamadaka").style.display;
+const displayThing = document.getElementById("atamadaka").style.display;
+let verb = false;
+let tot = 0;
+
 function setWord() {
   while (randomNumber === lastRandomNumber) {
     randomNumber = parseInt(Math.random() * lines.length);
@@ -16,29 +19,21 @@ function setWord() {
   lastRandomNumber = randomNumber;
 
   //parse reading and pitch accent
-  console.log(lines[randomNumber]);
-  let reading = lines[randomNumber].split(";")[0].split("[")[1];
-  /* if (reading.includes(",")) {
-  reading = reading.split(",")[1];
-}*/
-
+  //console.log(lines[randomNumber]);
   //console.log(word);
+
   wordNow = {
     word: lines[randomNumber].replace(/ *\[[^\]]*]/, ""),
     reading: (reading = lines[randomNumber].split(";")[0].split("[")[1]),
     pitch: lines[randomNumber].split(";")[1].split("]")[0],
   };
-  let verb = false;
+  verb = false;
   if (wordNow.reading.includes(",")) {
     wordNow.reading = wordNow.reading.split(",")[1];
     verb = true;
   }
-  /*if (wordNow.reading == "") {
-    wordNow.reading = wordNow.word;
-    wordNow.word = "";
-  }*/
-
-  if (verb == true) {
+  console.log(verb);
+  if (verb) {
     document.getElementById("atamadaka").style.display = "none";
     document.getElementById("odaka").style.display = "none";
     document.getElementById("nakadaka").style.display = "none";
@@ -71,7 +66,8 @@ $(document.body).ready(function () {
 function answer(pitch) {
   if (wordNow.pitch.includes(pitch)) {
     score += 1;
-    document.getElementById("score").innerHTML = "Score: " + score;
+    tot += 1;
+    document.getElementById("score").innerHTML = "Score: " + score + "/" + tot;
     console.log(score);
     document.getElementById("prevWord").innerHTML =
       "Last word: " + wordNow.word;
@@ -82,7 +78,7 @@ function answer(pitch) {
     } else if (wordNow.pitch.includes("n")) {
       document.getElementById("prevWord").style.color = "orange";
     } else if (wordNow.pitch.includes("o")) {
-      document.getElementById("prevWord").style.color = "odaka";
+      document.getElementById("prevWord").style.color = "green";
     } else if (wordNow.pitch.includes("k")) {
       document.getElementById("prevWord").style.color = "purple";
     }
@@ -91,11 +87,11 @@ function answer(pitch) {
     document.getElementById("correct").style.color = "green";
     //reset
   } else {
-    score -= 1;
-    document.getElementById("score").innerHTML = "Score: " + score;
+    tot += 1;
+    document.getElementById("score").innerHTML = "Score: " + score + "/" + tot;
     console.log(score);
     document.getElementById("prevWord").innerHTML =
-      "Last word: " + wordNow.word + "   You answered, " + pitch;
+      "Last word: " + wordNow.word + "   You answered: " + pitch;
     if (wordNow.pitch.includes("h")) {
       document.getElementById("prevWord").style.color = "blue";
     } else if (wordNow.pitch.includes("a")) {
@@ -103,7 +99,7 @@ function answer(pitch) {
     } else if (wordNow.pitch.includes("n")) {
       document.getElementById("prevWord").style.color = "orange";
     } else if (wordNow.pitch.includes("o")) {
-      document.getElementById("prevWord").style.color = "odaka";
+      document.getElementById("prevWord").style.color = "green";
     } else if (wordNow.pitch.includes("k")) {
       document.getElementById("prevWord").style.color = "purple";
     }
