@@ -29,10 +29,12 @@ body::after {
   opacity: 1;
 }
 .buttons {
-  width: 50%;
+  width: 40%;
+  float: center;
   position: relative;
-  margin: auto;
+  margin: auto; 
 }
+
 .btn {
   width: 200px;
   font-weight: bold;
@@ -55,4 +57,21 @@ body::after {
   font-weight: 600;
   font-size: 80px;
   margin: 20px;
+}
+.failList {
+  height: 100px !important;
+  width: 250px !important;
+  position: absolute;
+  overflow-y: scroll !important;
+  float: right;
+  top: 20%;
+  left: 75%;
+  color: grey;
+  resize: none;
+}
+.difficulty{
+  float: center;
+  position: relative;
+  width:75%;
+  left:19%;
 }

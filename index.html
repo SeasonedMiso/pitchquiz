@@ -41,6 +41,18 @@
       <div class="section no-pad-bot" id="index-banner">
         <div class="container">
           <br /><br />
+          <div class="fails">
+            <textarea
+              name="failList"
+              id="failList"
+              class="materialize-textarea failList"
+              cols="30"
+              rows="10"
+              readonly
+            >
+Failed Words:\n \n</textarea
+            >
+          </div>
           <h1 class="header center blue-grey-text"></h1>
           <div class="row center">
             <h5 class="header col s12 light">
@@ -59,39 +71,61 @@
                   id="heiban"
                   class="heiban btn blue darken-1 waves-effect"
                   onclick="answer('h')"
-                  >heiban</a
+                  >平板</a
                 >
                 <a
                   id="kifuku"
                   class="kifuku btn purple darken-1 waves-effect"
                   onclick="answer('k')"
-                  >kifuku</a
+                  >起伏</a
                 >
                 <a
                   id="odaka"
                   class="odaka btn green darken-1 waves-effect"
                   onclick="answer('o')"
-                  >odaka</a
+                  >尾高</a
                 >
                 <a
                   id="nakadaka"
                   class="nakadaka btn orange darken-1 waves-effect"
                   onclick="answer('n')"
-                  >nakadaka</a
+                  >中高</a
                 >
                 <a
                   id="atamadaka"
                   class="atamadaka btn red darken-1 waves-effect"
                   onclick="answer('a')"
-                  >atamadaka</a
+                  >頭高</a
                 >
               </div>
             </h5>
           </div>
+          <div class="difficulty">
+            <a
+              id="easy"
+              class="easy btn grey darken-1 waves-effect"
+              onclick="loadList('easy')"
+              >easy</a
+            >
+            <a
+              id="medium"
+              class="medium btn grey darken-1 waves-effect"
+              onclick="loadList('medium')"
+              >medium</a
+            >
+            <a
+              id="hard"
+              class="hard btn grey darken-1 waves-effect"
+              onclick="loadList('hard')"
+              >hard</a
+            >
+          </div>
+
           <div class="row center"></div>
           <br /><br />
         </div>
       </div>
+
       <div class="container">
         <div class="section">
           <!--   Icon Section   -->

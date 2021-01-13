@@ -6,7 +6,14 @@ let wordNow = { word, reading, pitch };
 const displayThing = document.getElementById("atamadaka").style.display;
 let verb = false;
 let tot = 0;
+let failedWords = "Failed Words:\n \n";
+document.getElementById("failList").innerHTML = failedWords;
 
+/* function loadList(para) {
+  if (para == "easy") {
+  }
+}
+*/
 function setWord() {
   while (randomNumber === lastRandomNumber) {
     randomNumber = parseInt(Math.random() * lines.length);
@@ -19,8 +26,6 @@ function setWord() {
   lastRandomNumber = randomNumber;
 
   //parse reading and pitch accent
-  //console.log(lines[randomNumber]);
-  //console.log(word);
 
   wordNow = {
     word: lines[randomNumber].replace(/ *\[[^\]]*]/, ""),
@@ -28,7 +33,7 @@ function setWord() {
     pitch: lines[randomNumber].split(";")[1].split("]")[0],
   };
   verb = false;
-  if (wordNow.reading.includes(",")) {
+  if (wordNow.reading.split(";")[0].includes(",")) {
     wordNow.reading = wordNow.reading.split(",")[1];
     verb = true;
   }
@@ -62,7 +67,9 @@ $(document.body).ready(function () {
     setWord();
   });
 });
-
+function scrollToBottom() {
+  $("#failList").scrollTop($("#failList")[0].scrollHeight);
+}
 function answer(pitch) {
   if (wordNow.pitch.includes(pitch)) {
     score += 1;
@@ -106,6 +113,10 @@ function answer(pitch) {
     document.getElementById("correct").innerHTML = "x";
     document.getElementById("correct").style.color = "red";
 
+    failedWords += wordNow.word + "\n";
+    document.getElementById("failList").innerHTML = failedWords;
+    console.log(wordNow.word);
+    scrollToBottom();
     setWord();
   }
 }

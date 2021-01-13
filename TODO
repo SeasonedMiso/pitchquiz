@@ -13,3 +13,28 @@ steps:
 
 >>>>>>>>>>>>>>>>>>>>>>>
 dictionary for pitch color from letter
+
+Errors:
+verbs being odaka etc
+nouns being kifuku
+
+hiragana verbs getting furigana
+choose word list (frequency)
+xlist of failed words
+mobile formating
+Show alternate pitch in case of 2+ pitches
+
+xscript to remove empty lines from text
+
+easy: 1-2k
+medium:2k-5k
+hard:5k-20k
+
+regex stuff:
+^.*\[.+\].*\[.+\].*$    
+^[\s\n]*$
+^\n+$
+^([^[\]]*)$
+
+Verbs with odaka tag
+^.*,.*;.*o.*$
