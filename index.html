@@ -62,8 +62,12 @@ Failed Words:\n \n</textarea
 
               <div class="word">
                 <div id="pitch" class="wordField pitch"></div>
-                <div id="reading" class="wordField reading"></div>
-                <div id="word" class="wordField kanji"></div>
+                <!--<div id="reading" class="wordField reading"></div>
+                <div id="word" class="wordField kanji"></div>-->
+                <ruby>
+                  <div id="word" class="wordField kanji"></div>
+                  <rt id="reading" class="wordField reading"></rt>
+                </ruby>
               </div>
 
               <div class="buttons">
@@ -73,49 +77,56 @@ Failed Words:\n \n</textarea
                   onclick="answer('h')"
                   >平板</a
                 >
-                <a
-                  id="kifuku"
-                  class="kifuku btn purple darken-1 waves-effect"
-                  onclick="answer('k')"
-                  >起伏</a
-                >
+                <br />
+                <span id="kifuku">
+                  <a
+                    class="kifuku btn purple darken-1 waves-effect"
+                    onclick="answer('k')"
+                    >起伏</a
+                  >
+                  <br />
+                </span>
+
                 <a
                   id="odaka"
                   class="odaka btn green darken-1 waves-effect"
                   onclick="answer('o')"
                   >尾高</a
                 >
+                <br />
                 <a
                   id="nakadaka"
                   class="nakadaka btn orange darken-1 waves-effect"
                   onclick="answer('n')"
                   >中高</a
                 >
+                <br />
                 <a
                   id="atamadaka"
                   class="atamadaka btn red darken-1 waves-effect"
                   onclick="answer('a')"
                   >頭高</a
                 >
+                <br />
               </div>
             </h5>
           </div>
           <div class="difficulty">
             <a
               id="easy"
-              class="easy btn grey darken-1 waves-effect"
+              class="easy diff btn grey darken-1 waves-effect"
               onclick="loadList('easy')"
               >easy</a
             >
             <a
               id="medium"
-              class="medium btn grey darken-1 waves-effect"
+              class="medium diff btn grey darken-1 waves-effect"
               onclick="loadList('medium')"
               >medium</a
             >
             <a
               id="hard"
-              class="hard btn grey darken-1 waves-effect"
+              class="hard diff btn grey darken-1 waves-effect"
               onclick="loadList('hard')"
               >hard</a
             >
