@@ -5,21 +5,22 @@ Web interface for them for cross platform, host from github.io
 interface:
 https://materializecss.com/
 
-steps:
-make web interface
+Sentence tool:
+TODO:
+implement words with multiple accents
 
-    Errors:
-    X verbs being odaka etc
-    X nouns being kifuku
-    x Text color
-    x hiragana verbs getting furigana
-    x Showing same word twice
-    0 remove conjugated forms (細かく vs 細かい)
-    remove compound words that only have one word parsed (身[み;h]のまわり)
-    x fix furigana to be ontop of kanji, or the whole word in kana above
-    x Chrome testing
-    x Odaka 1 mora words make atamadaka valid too?
-
+Word Tool:
+Errors:
+X verbs being odaka etc
+X nouns being kifuku
+x Text color
+x hiragana verbs getting furigana
+x Showing same word twice
+0 remove conjugated forms (細かく vs 細かい)
+remove compound words that only have one word parsed (身[み;h]のまわり)
+x fix furigana to be ontop of kanji, or the whole word in kana above
+x Chrome testing
+x Odaka 1 mora words make atamadaka valid too?
 
     ToDO:
     x display pitch of your guess v.s answer in a way that doesn't look bad
@@ -32,12 +33,12 @@ make web interface
     X script to remove empty lines from text
     add a report error feature
     Pass/IDK button
-    Add audio? [http://assets.languagepod101.com/dictionary/japanese/audiomp3.php?kanji=%E7%8A%AC&kana=%E3%81%84%E3%81%AC 　 for the word 犬]
+    x Add audio? [http://assets.languagepod101.com/dictionary/japanese/audiomp3.php?kanji=%E7%8A%AC&kana=%E3%81%84%E3%81%AC 　 for the word 犬]
     Fix display for ultrawide
     correct and fail sfx
     difficulty buttons centred (flexbox? https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
-Footer and header styling guide: https://css-tricks.com/snippets/css/complete-guide-grid/
+x Footer and header styling guide: https://css-tricks.com/snippets/css/complete-guide-grid/
 
 WordLists:
 easy: 1-2k
@@ -52,3 +53,30 @@ regex stuff:
 
 Verbs with odaka tag
 ^._,._;._o._$
+
+errors:
+
+越し　:　こしし reading
+
+Console dump when same word twice:
+
+3 script.js:148:13
+688 1102 script.js:49:11
+Array [ "吾" ]
+script.js:65:13
+false script.js:83:11
+Loading mixed (insecure) display content "http://assets.languagepod101.com/dictionary/japanese/audiomp3.php?kanji=%E6%B1%BA%E3%81%BE%E3%82%8B&kana=%E3%81%8D%E3%81%BE%E3%82%8B" on a secure page
+pitchquiz-git-master.seasonedmiso.vercel.app
+Cannot play media. No decoders for requested formats: audio/mpeg pitchquiz-git-master.seasonedmiso.vercel.app
+14 script.js:148:13
+7 688 script.js:49:11
+Uncaught TypeError: lines[randomNumber].split(...)[1] is undefined
+setWord https://pitchquiz-git-master.seasonedmiso.vercel.app/js/script.js:57
+answer https://pitchquiz-git-master.seasonedmiso.vercel.app/js/script.js:162
+onclick https://pitchquiz-git-master.seasonedmiso.vercel.app/:1
+script.js:57:32
+setWord https://pitchquiz-git-master.seasonedmiso.vercel.app/js/script.js:57
+answer https://pitchquiz-git-master.seasonedmiso.vercel.app/js/script.js:162
+onclick https://pitchquiz-git-master.seasonedmiso.vercel.app/:1
+
+​

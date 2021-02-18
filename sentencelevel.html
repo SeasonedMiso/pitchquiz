@@ -49,9 +49,7 @@
               cols="30"
               rows="10"
               readonly
-            >
-Failed Words:\n \n</textarea
-            >
+            ></textarea>
           </div>
           <h1 class="header center blue-grey-text"></h1>
           <div class="row center">
@@ -59,81 +57,12 @@ Failed Words:\n \n</textarea
               <div id="correct" class="correct"></div>
               <div id="score" class="score">Score: 0</div>
               <div id="prevWord" class="prevWord"></div>
-
-              <div class="word">
-                <div id="pitch" class="wordField pitch"></div>
-                <!--<div id="reading" class="wordField reading"></div>
-                <div id="word" class="wordField kanji"></div>-->
-                <ruby>
-                  <div id="word" class="wordField kanji"></div>
-                  <rt id="reading" class="wordField reading"></rt>
-                </ruby>
-              </div>
-
-              <div class="buttons">
-                <a
-                  id="heiban"
-                  class="heiban btn blue darken-1 waves-effect"
-                  onclick="answer('h')"
-                  >平板</a
-                >
-                <br />
-                <span id="kifuku">
-                  <a
-                    class="kifuku btn purple darken-1 waves-effect"
-                    onclick="answer('k')"
-                    >起伏</a
-                  >
-                  <br />
-                </span>
-
-                <a
-                  id="odaka"
-                  class="odaka btn green darken-1 waves-effect"
-                  onclick="answer('o')"
-                  >尾高</a
-                >
-                <br />
-                <a
-                  id="nakadaka"
-                  class="nakadaka btn orange darken-1 waves-effect"
-                  onclick="answer('n')"
-                  >中高</a
-                >
-                <br />
-                <a
-                  id="atamadaka"
-                  class="atamadaka btn red darken-1 waves-effect"
-                  onclick="answer('a')"
-                  >頭高</a
-                >
-                <br />
-              </div>
             </h5>
           </div>
-          <div class="difficulty">
-            <a
-              id="easy"
-              class="easy diff btn grey darken-1 waves-effect"
-              onclick="loadList('easy')"
-              >easy</a
-            >
-            <a
-              id="medium"
-              class="medium diff btn grey darken-1 waves-effect"
-              onclick="loadList('medium')"
-              >medium</a
-            >
-            <a
-              id="hard"
-              class="hard diff btn grey darken-1 waves-effect"
-              onclick="loadList('hard')"
-              >hard</a
-            >
+          <div class="row center">
+            <div id="sentenceBox" class="sentenceBox"></div>
+            <div id="sentenceBtn" class="sentenceBtn"></div>
           </div>
-
-          <div class="row center"></div>
-          <br /><br />
         </div>
       </div>
 
@@ -143,10 +72,10 @@ Failed Words:\n \n</textarea
           <div class="col s12 m4">
             <div class="icon-block">
               <h2 class="center light-blue-text"></h2>
-              <h5 class="center">Pitch accent vocab quiz</h5>
+              <h5 class="center">Pitch accent perception quiz</h5>
               <p class="para">
-                Choose the correct pitch accent of the word. In case of bug, or
-                incorrect word entry, email seasonedmiso@gmail.com.
+                Click between the syllables to insert downsteps in the correct
+                places
               </p>
             </div>
           </div>
@@ -181,6 +110,6 @@ Failed Words:\n \n</textarea
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
-    <script src="js\word.js"></script>
+    <script src="js/sentence.js"></script>
   </body>
 </html>
