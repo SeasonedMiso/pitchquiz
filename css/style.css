@@ -88,3 +88,18 @@ body::after {
 .sentenceBox {
   font-size: 45px;
 }
+
+.mora {
+  color: white;
+  background-color: grey;
+}
+.go {
+  font-size: 50px;
+  color: grey;
+  margin-top: 10px;
+}
+/* .btn-small {
+  border: 2px !important;
+  border-color: aliceblue !important;
+  size: 2000px !important;
+} */

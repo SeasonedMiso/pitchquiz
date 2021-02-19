@@ -5,9 +5,16 @@ Web interface for them for cross platform, host from github.io
 interface:
 https://materializecss.com/
 
+All:
+TODO:
+fix textarea styling for mobile
+
 Sentence tool:
 TODO:
 implement words with multiple accents
+get rid of blue on toggle red off
+support override/to make a custom array of drops and to use that in place of parsing
+make navbar to link sentence page
 
 Word Tool:
 Errors:

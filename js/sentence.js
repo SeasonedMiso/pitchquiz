@@ -13,6 +13,9 @@ var splitSentence = splitSentence.filter(function (el) {
 });
 let kanjiSent = sentence.replaceAll(/ *\[[^\]]*]/g, "").replaceAll(" ", "");
 let kanaSent = "";
+let i;
+let btnCount = 1;
+let ans = [];
 let wordsInSen = [{ word: "", reading: "", pitch: "", drop: "" }];
 
 //generate kana sentence
@@ -34,9 +37,9 @@ for (word in splitSentence) {
 }
 
 //parse each word in sentence
-let i;
+
 for (i = 0; i < splitSentence.length; i++) {
-  console.log("total mora=" + mora);
+  //console.log("total mora=" + mora);
   if (splitSentence[i].includes("[")) {
     wordsInSen[i] = {
       word: splitSentence[i].replace(/ *\[[^\]]*]/, ""),
@@ -71,12 +74,12 @@ for (i = 0; i < splitSentence.length; i++) {
       //get the character after n
       wordsInSen[i].drop += wordsInSen[i].pitch.replaceAll("k", "");
     }
-    console.log("word drop=" + eval(wordsInSen[i].drop));
+    //console.log("word drop=" + eval(wordsInSen[i].drop));
     accentMora += mora + eval(wordsInSen[i].drop);
     //console.log("Sentence accent=" + accentMora);
     senAcc.push(accentMora);
     accentMora = 0;
-    console.log(senAcc);
+    //console.log(senAcc);
     if (wordsInSen[i].reading.length > 0) {
       mora += wordsInSen[i].reading.length;
     } else {
@@ -90,6 +93,10 @@ for (i = 0; i < splitSentence.length; i++) {
     };
     mora += wordsInSen[i].word.length;
   }
+  senAcc = senAcc.filter(Boolean);
+  //console.log("res" + senAcc);
+  //console.log(typeof senAcc[0]);
+  console.log("res" + senAcc);
 }
 console.log("expected: 4,11,16,20");
 //parse drops into sentence location
@@ -98,14 +105,74 @@ console.log("expected: 4,11,16,20");
 document.getElementById("sentenceBox").innerHTML = kanjiSent + "</br>";
 
 //generate a button for each character in sentence
-let btnCount = 1;
+
 for (const character of kanaSent) {
   if (senAcc.includes(btnCount)) {
+    //drop mora
     document.getElementById("sentenceBtn").innerHTML +=
-      "<button class='red'>" + character + "</button>";
+      // "<a class='blue ans mora btn-small'>" + character + "</a>";
+      // "<button onclick='evaluateAns(this)' class='ans mora' data-pos='" +
+      // btnCount +
+      // "'>" +
+      // character +
+      // "</button>";
+      `<button onclick="evaluateAns(this)" class="ans mora" data-post="${btnCount}">${character}</button>`;
   } else {
     document.getElementById("sentenceBtn").innerHTML +=
-      "<button class='blue'>" + character + "</button>";
+      // "<a class='blue-grey notans mora btn-small'>" + character + "</a>";
+      // "<button onclick='evaluateAns(this)' class= 'notans mora data-pos='" +
+      // btnCount +
+      // "'>" +
+      // character +
+      // "</button>";
+      `<button onclick="evaluateAns(this)" class="notAns mora" data-post="${btnCount}">${character}</button>`;
   }
+
   btnCount += 1;
+}
+
+function arrayRemove(arr, value) {
+  return arr.filter(function (ele) {
+    return ele != value;
+  });
+}
+
+//accept user input
+function evaluateAns(prsdBtn) {
+  //x.style.display.toggle("color: red");
+  prsdBtn.classList.toggle("red");
+  let pos = eval(prsdBtn.dataset.post);
+  if (ans.includes(pos)) {
+    ans = arrayRemove(ans, pos);
+  } else {
+    ans.push(pos);
+  }
+  console.log(ans);
+
+  // if (x.classList[i].includes("btn")) {
+  //   pos = x.classList[i];
+  //   console.log(pos);
+  // }
+  // }
+}
+//finalize selection
+function gradeSen() {
+  console.log(senAcc);
+  console.log(ans);
+  if (
+    ans.length === senAcc.length &&
+    ans.every(function (value, index) {
+      return value === senAcc[index];
+    })
+  ) {
+    console.log("pass");
+  } else {
+    console.log("fail");
+  }
+}
+
+function numbersOnly(value) {
+  if (typeof value === "number") {
+    return value;
+  }
 }
