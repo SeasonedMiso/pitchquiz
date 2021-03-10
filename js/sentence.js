@@ -1,11 +1,15 @@
 const containerId = "button-container";
 //let sentence = "これ[;h] は ペン[;a] です ";
-let sentence =
-  "アルゴリズム[;n4] と データ構造[でーたこうぞう;n4] の 定義[ていぎ;a] を 理解[りかい;a] する[,する;h]";
+//let sentence =
+// "アルゴリズム[;n4] と データ構造[でーたこうぞう;n4] の 定義[ていぎ;a] を 理解[りかい;a] する[,する;h]";
 //expected: 4,11,16,20
+sentence = "";
 let sentenceDrop;
 let mora = 0;
 let accentMora = 0;
+let score = 0;
+let tot = 0;
+let btnCount = 1;
 let senAcc = [];
 splitSentence = sentence.split(" ");
 var splitSentence = splitSentence.filter(function (el) {
@@ -14,10 +18,34 @@ var splitSentence = splitSentence.filter(function (el) {
 let kanjiSent = sentence.replaceAll(/ *\[[^\]]*]/g, "").replaceAll(" ", "");
 let kanaSent = "";
 let i;
-let btnCount = 1;
 let ans = [];
 let wordsInSen = [{ word: "", reading: "", pitch: "", drop: "" }];
 
+$(document.body).ready(function () {
+  // load the trivia from the server
+  $.ajax({ url: "sentencelist.txt" }).done(function (content) {
+    // normalize the line breaks, then split into lines
+    lines = content
+      .replace(/\r\n|\r/g, "\n")
+      .trim()
+      .split("\n");
+    //console.log(lines);
+  });
+  // let sentence = ;
+});
+function setWord() {
+  while (randomNumber === lastRandomNumber) {
+    randomNumber = parseInt(Math.random() * lines.length);
+    // check to prevent infinite loop
+    if (lines.length === 1) {
+      break;
+    }
+  }
+  console.log(randomNumber, lastRandomNumber);
+  // keep track of the last random number
+  lastRandomNumber = randomNumber;
+}
+setWord();
 //generate kana sentence
 for (word in splitSentence) {
   let temp;
@@ -96,7 +124,7 @@ for (i = 0; i < splitSentence.length; i++) {
   senAcc = senAcc.filter(Boolean);
   //console.log("res" + senAcc);
   //console.log(typeof senAcc[0]);
-  console.log("res" + senAcc);
+  //console.log("res" + senAcc);
 }
 console.log("expected: 4,11,16,20");
 //parse drops into sentence location
@@ -147,7 +175,7 @@ function evaluateAns(prsdBtn) {
   } else {
     ans.push(pos);
   }
-  console.log(ans);
+  //console.log(ans);
 
   // if (x.classList[i].includes("btn")) {
   //   pos = x.classList[i];
@@ -157,8 +185,9 @@ function evaluateAns(prsdBtn) {
 }
 //finalize selection
 function gradeSen() {
-  console.log(senAcc);
-  console.log(ans);
+  //console.log(senAcc);
+  //console.log(ans);
+  tot += 1;
   if (
     ans.length === senAcc.length &&
     ans.every(function (value, index) {
@@ -166,9 +195,13 @@ function gradeSen() {
     })
   ) {
     console.log("pass");
+    score += 1;
+
+    console.log(score);
   } else {
     console.log("fail");
   }
+  document.getElementById("score").innerHTML = "Score: " + score + "/" + tot;
 }
 
 function numbersOnly(value) {

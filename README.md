@@ -14,7 +14,8 @@ TODO:
 implement words with multiple accents
 get rid of blue on toggle red off
 support override/to make a custom array of drops and to use that in place of parsing
-make navbar to link sentence page
+make navbar display on mobile
+divide sentence.js into a script to parse yoga syntax, and a script to accept an input of a text file in format of (sentence,dropArray)
 
 Word Tool:
 Errors:
