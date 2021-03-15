@@ -246,4 +246,3 @@ function getAudio(kana, kanji) {
   });
 }
 // getAudio(wordNow.reading, wordNow.word);
-もしや;

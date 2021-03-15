@@ -98,6 +98,11 @@ body::after {
   color: grey;
   margin-top: 10px;
 }
+.replay {
+  font-size: 20px;
+  color: grey;
+  margin: 10px;
+}
 /* .btn-small {
   border: 2px !important;
   border-color: aliceblue !important;

@@ -8,12 +8,15 @@ https://materializecss.com/
 All:
 TODO:
 fix textarea styling for mobile
+list of things already used/ stop repetetion
 
 Sentence tool:
 TODO:
-implement words with multiple accents
+failed sentence list
+xaudio replay button
+0implement words with multiple accents
 get rid of blue on toggle red off
-support override/to make a custom array of drops and to use that in place of parsing
+x support override/to make a custom array of drops and to use that in place of parsing
 make navbar display on mobile
 divide sentence.js into a script to parse yoga syntax, and a script to accept an input of a text file in format of (sentence,dropArray)
 
