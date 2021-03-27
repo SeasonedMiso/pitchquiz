@@ -12,6 +12,7 @@ list of things already used/ stop repetetion
 
 Sentence tool:
 TODO:
+Generate button verb conjugation
 failed sentence list
 xaudio replay button
 0implement words with multiple accents

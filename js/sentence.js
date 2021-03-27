@@ -18,13 +18,22 @@ nowAudio = new Audio();
 
 //main method
 $(document.body).ready(function () {
-  $.ajax({ url: "sentences.json" }).done(function (json) {
-    content = json.sentences;
-    setWord();
-    console.log(sentenceNow.drops);
-    /////////////////
+  //   $.ajax({ url: "sentences.json" }).done(function (json) {
+  //     content = json.sentences;
+  //     setWord();
+  //     console.log(sentenceNow.drops);
+  // });
+
+  fetch("http://localhost:3000/pitch").then(function (response) {
+    response.json().then((json) => {
+      content = json.sentences;
+      setWord();
+      console.log(sentenceNow.drops);
+    });
   });
 });
+/////////////////
+
 //accept user input
 function evaluateAns(prsdBtn) {
   prsdBtn.classList.toggle("red");
@@ -59,22 +68,20 @@ function gradeSen() {
 }
 
 function setWord() {
-  while (randomNumber === lastRandomNumber) {
-    randomNumber = parseInt(Math.random() * content.length);
-    //check to prevent infinite loop
-    // if (lines.length === 1) {
-    //   break;
-    // }
-    console.log("rand" + randomNumber);
+  if (content && content.length) {
+    while (randomNumber === lastRandomNumber) {
+      randomNumber = parseInt(Math.random() * content.length);
+      console.log("rand" + randomNumber);
+    }
+    //console.log(randomNumber, lastRandomNumber);
+    // keep track of the last random number
+    lastRandomNumber = randomNumber;
+    //console.log(json.sentence)
+    sentenceNow = content[randomNumber];
+    buildSentence();
+    //playaudio
+    playAudio();
   }
-  //console.log(randomNumber, lastRandomNumber);
-  // keep track of the last random number
-  lastRandomNumber = randomNumber;
-  //console.log(json.sentence)
-  sentenceNow = content[randomNumber];
-  buildSentence();
-  //playaudio
-  playAudio();
 }
 function arrayRemove(arr, value) {
   return arr.filter(function (ele) {
