@@ -24,7 +24,7 @@ $(document.body).ready(function () {
   //     console.log(sentenceNow.drops);
   // });
 
-  fetch("https://pitchy-backend-git-master-seasonedmiso.vercel.app/").then(function (response) {
+  fetch("https://pitchy-backend-git-master-seasonedmiso.vercel.app/pitch").then(function (response) {
     response.json().then((json) => {
       content = json.sentences;
       setWord();
