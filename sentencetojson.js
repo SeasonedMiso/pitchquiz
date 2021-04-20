@@ -12,7 +12,7 @@ $(document.body).ready(function () {
       .replace(/\r\n|\r/g, "\n")
       .trim()
       .split("\n");
-    //console.log(lines);
+    console.log(lines);
 
     for (i in lines) {
       writeObject.sentences.push({
