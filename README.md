@@ -16,20 +16,20 @@ https://materializecss.com/
 
 ---------------------------------
 TODO:
-fix textarea styling for mobile
-list of things already used/ stop repetetion
+-fix textarea styling for mobile
+-list of things already used/ stop repetetion
 
 Sentence tool:
-Generate button verb conjugation
-failed sentence list
-get rid of blue on toggle red off
-make navbar display on mobile
-divide sentence.js into a script to parse yoga syntax, and a script to accept an input of a text file in format of (sentence,dropArray)
+-Generate button verb conjugation
+-failed sentence list
+-get rid of blue on toggle red off
+-make navbar display on mobile
+-divide sentence.js into a script to parse yoga syntax, and a script to accept an input of a text file in format of (sentence,dropArray)
 
 Word Tool:
 Errors:
-0 remove conjugated forms (細かく vs 細かい)
-remove compound words that only have one word parsed (身[み;h]のまわり)
+- remove conjugated forms (細かく vs 細かい)
+- remove compound words that only have one word parsed (身[み;h]のまわり)
 
     ToDO:
     mobile formating
