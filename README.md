@@ -20,11 +20,11 @@ TODO:
 -list of things already used/ stop repetetion
 
 Sentence tool:
--Generate button verb conjugation
--failed sentence list
--get rid of blue on toggle red off
--make navbar display on mobile
--divide sentence.js into a script to parse yoga syntax, and a script to accept an input of a text file in format of (sentence,dropArray)
+- Generate button verb conjugation
+- failed sentence list
+- get rid of blue on toggle red off
+- make navbar display on mobile
+- divide sentence.js into a script to parse yoga syntax, and a script to accept an input of a text file in format of (sentence,dropArray)
 
 Word Tool:
 Errors:
@@ -32,14 +32,13 @@ Errors:
 - remove compound words that only have one word parsed (身[み;h]のまわり)
 
     ToDO:
-    mobile formating
-    show specific drops in nakadaka words
-    export failed words to anki deck
-    add a report error feature
-    Pass/IDK button
-    Fix display for ultrawide
-    correct and fail sfx
-    difficulty buttons centred (flexbox? https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+    - mobile formating
+    - show specific drops in nakadaka words
+    - export failed words to anki deck
+    - add a report error feature
+    - Pass/IDK button
+    - Fix display for ultrawide
+    - correct and fail sfx
 
 
 
