@@ -28,18 +28,38 @@ body::after {
   background-size: cover;
   opacity: 1;
 }
-.nav-wrapper-container {
+.navWrapCont {
   width: 100%;
+  height: 100%;
   text-align: left;
+  /* display: inline-block; */
 }
-.brand-logo {
-  width: 100%;
+.brandLogo {
+  width: 50%;
+  font-size: 25px;
   float: left;
-  /* left: 25%; */
+  /* color: black; */
 }
-.nav {
-  width: auto;
+
+.navii {
+  width: 50%;
+  height: 100%;
+  font-size: 250px;
+  float: right;
+  text-align: right;
+  color: aquamarine;
 }
+.navii li {
+  float: right;
+  text-align: right;
+}
+.naviii {
+  font-size: 25px;
+  /* color: aquamarine; */
+  /* float: right; */
+  /* width: 100%; */
+}
+
 .buttons {
   width: 100%;
   float: center;
@@ -99,7 +119,8 @@ body::after {
   font-size: 14px;
 }
 .sentenceBox {
-  font-size: 45px;
+  /* font-size: 45px; */
+  font-size: 200%;
 }
 
 .mora {
