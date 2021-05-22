@@ -1,4 +1,4 @@
-Quiz for improving the recognition of Standard Japanese pitch accent in words and sentences. 
+Quiz for improving the recognition of Standard Japanese pitch accent in words and sentences.
 https://en.wikipedia.org/wiki/Japanese_pitch_accent
 
 There are 2 modes: Word Quiz and Sentence Tool
@@ -14,33 +14,33 @@ hard:5k-20k most common words
 interface:
 https://materializecss.com/
 
----------------------------------
+---
+
 TODO:
--fix textarea styling for mobile
 -list of things already used/ stop repetetion
 
 Sentence tool:
+
 - Generate button verb conjugation
 - failed sentence list
 - get rid of blue on toggle red off
-- make navbar display on mobile
 - divide sentence.js into a script to parse yoga syntax, and a script to accept an input of a text file in format of (sentence,dropArray)
 
 Word Tool:
 Errors:
+
 - remove conjugated forms (細かく vs 細かい)
 - remove compound words that only have one word parsed (身[み;h]のまわり)
 
-    ToDO:
-    - mobile formating
-    - show specific drops in nakadaka words
-    - export failed words to anki deck
-    - add a report error feature
-    - Pass/IDK button
-    - Fix display for ultrawide
-    - correct and fail sfx
+  ToDO:
 
-
+  - mobile formating
+  - show specific drops in nakadaka words
+  - export failed words to anki deck
+  - add a report error feature
+  - Pass/IDK button
+  - Fix display for ultrawide
+  - correct and fail sfx
 
 Parsing errors:
 越し　:　こしし reading
