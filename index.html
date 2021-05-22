@@ -24,6 +24,12 @@
       rel="stylesheet"
       media="screen,projection"
     />
+    <link
+      rel="icon"
+      href="favicon_io/favicon.ico"
+      sizes="16x16 32x32"
+      type="image/png"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -34,28 +40,24 @@
   <body>
     <stuff>
       <nav class="blue-grey darken-1" role="navigation">
-        <div class="nav-wrapper container">
-          <a id="logo-container" href="#" class="brand-logo">MISO TOOLBOX</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sentencelevel.html">Sentence Tool</a></li>
-          </ul>
-        </div>
+        <div class="nav-wrapper-container navWrapCont">
+
+          <!-- <a id="logo-container" href="#" class="brand-logo">MISO TOOLBOX</a> -->
+          <div class="brandLogo">
+          <a id="logo-container" href="#"></a> MISO TOOLBOX</a>
+            </div>
+            <!-- <ul id="nav-mobile" class=" navi right hide-on-med-and-down"> -->
+              <ul id="navii" class="navii">
+              <li><a href="sentencelevel.html" class="naviii">Sentence Tool</a></li>
+            </ul>
+          </div>
+
+
+
       </nav>
       <div class="section no-pad-bot" id="index-banner">
         <div class="container">
           <br /><br />
-          <div class="fails">
-            <textarea
-              name="failList"
-              id="failList"
-              class="materialize-textarea failList"
-              cols="30"
-              rows="10"
-              readonly
-            >
-Failed Words:\n \n</textarea
-            >
-          </div>
           <h1 class="header center blue-grey-text"></h1>
           <div class="row center">
             <h5 class="header col s12 light">
@@ -113,6 +115,18 @@ Failed Words:\n \n</textarea
                 <br />
               </div>
             </h5>
+          </div>
+          <div class="fails" id="fails">
+            <textarea
+              name="failList"
+              id="failList"
+              class="materialize-textarea failList"
+              cols="30"
+              rows="10"
+              readonly
+            >
+            Failed Words:\n \n</textarea
+            >
           </div>
           <div class="difficulty">
             <a
