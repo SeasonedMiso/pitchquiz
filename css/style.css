@@ -35,14 +35,15 @@ body::after {
   /* display: inline-block; */
 }
 .brandLogo {
-  width: 50%;
+  width: 49%;
+  margin-left: 5px;
   font-size: 25px;
   float: left;
   /* color: black; */
 }
 
 .navii {
-  width: 50%;
+  width: 49%;
   height: 100%;
   font-size: 250px;
   float: right;
