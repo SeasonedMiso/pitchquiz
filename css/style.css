@@ -28,6 +28,18 @@ body::after {
   background-size: cover;
   opacity: 1;
 }
+.nav-wrapper-container {
+  width: 100%;
+  text-align: left;
+}
+.brand-logo {
+  width: 100%;
+  float: left;
+  /* left: 25%; */
+}
+.nav {
+  width: auto;
+}
 .buttons {
   width: 100%;
   float: center;
@@ -42,7 +54,7 @@ body::after {
   width: 200px;
   font-weight: bold;
   position: relative;
-  float: center;
+  /* float: center; */
   margin: 10px;
   color: white !important;
 }
@@ -62,14 +74,15 @@ body::after {
   font-size: 80px;
   margin: 20px;
 }
+.fails {
+  text-align: center;
+}
 .failList {
   height: 100px !important;
   width: 250px !important;
-  position: absolute;
+  position: relative;
   overflow-y: scroll !important;
-  float: right;
-  top: 20%;
-  left: 75%;
+  bottom: 20px;
   color: grey;
   resize: none;
 }
